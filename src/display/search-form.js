@@ -17,9 +17,6 @@ async function handleSearchSubmit(event) {
         if (compiledWeatherData !== null) {
             console.log(compiledWeatherData);
         }
-        if (compiledWeatherData === null) {
-            console.log(`Could not find weather data for ${location}`);
-        }
     } catch (error) {
         console.error(error);
         throw error;
