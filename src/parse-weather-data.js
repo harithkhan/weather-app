@@ -1,12 +1,17 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { format } from "date-fns";
 import { getWeatherData } from "./weather-api";
 
 export async function parseCurrentWeather(location) {
     const weatherData = await getWeatherData(location);
     if (!weatherData) {
         return console.error(`Failed to retrieve weather data for ${location}`);
-    }   
+    }
+    const currentTime = new Date();
+    const formattedCurrentTime = format(currentTime, "h:mm a");   
     
     const currentWeather = {
+        currenttime: formattedCurrentTime,
         location: weatherData.resolvedAddress,
         datetime: weatherData.currentConditions.datetime,
         description: weatherData.description,
