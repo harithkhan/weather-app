@@ -12,6 +12,8 @@ async function handleSearchSubmit(event) {
     }
     try {
         const compiledWeatherData = await handleSearch(location);
+        const searchInput = document.getElementById("search");
+        searchInput.value = "";
         console.log(compiledWeatherData);
     } catch (error) {
         console.error(error);
