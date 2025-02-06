@@ -20,7 +20,7 @@ export async function parseCurrentWeather(location) {
 
 export async function parseDayWeather(location) {
     const weatherData = await getWeatherData(location);
-    const dayWeatherData = weatherData.days[0].hours;
+    const dayWeatherData = weatherData.days[0].hours; // Returns an array of 24 hours of weather data
     const parsedDayWeather = dayWeatherData.reduce((acc, hourData, index) => {
         acc[index] = {
             datetime: hourData.datetime,
@@ -30,20 +30,22 @@ export async function parseDayWeather(location) {
         };
         return acc;
     }, {});
-
-    // let parsedDayWeather = {};
-
-    // for (let i in dayWeatherData) {
-    //     parsedDayWeather[i] = {
-    //         datetime: dayWeatherData[i].datetime,
-    //         temp: dayWeatherData[i].temp,
-    //         conditions: dayWeatherData[i].conditions,
-    //         precipprob: dayWeatherData[i].precipprob
-    //     }
-    // }
     return parsedDayWeather;
 }
 
-// export function parseWeekWeather() {
-
-// }
+export async function parseWeekWeather(location) {
+    const weatherData = await getWeatherData(location);
+    const weekWeatherData = weatherData.days // Returns an array of 14 days of weather data
+    const parsedWeekWeather = weekWeatherData.reduce((acc, dayData, index) => {
+        if (index <= 6) {
+            acc[index] = {
+                datetime: dayData.datetime,
+                temp: dayData.temp,
+                conditions: dayData.conditions,
+                precipprob: dayData.precipprob
+            }
+        };
+        return acc;
+    }, {});
+    return parsedWeekWeather;
+}
