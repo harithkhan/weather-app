@@ -11,9 +11,12 @@ export async function getWeatherData(location) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const weatherData = await response.json();
+        if (!weatherData || !weatherData.currentConditions) {
+            throw new Error(`No valid weather data found for ${location}`);
+        }
         return weatherData;
     } catch (error) {
         console.error(`Error fetching weather data for ${location}:`, error);
-        throw error;
+        return null;
     }
 }

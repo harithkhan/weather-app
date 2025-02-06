@@ -14,7 +14,12 @@ async function handleSearchSubmit(event) {
         const compiledWeatherData = await handleSearch(location);
         const searchInput = document.getElementById("search");
         searchInput.value = "";
-        console.log(compiledWeatherData);
+        if (compiledWeatherData !== null) {
+            console.log(compiledWeatherData);
+        }
+        if (compiledWeatherData === null) {
+            console.log(`Could not find weather data for ${location}`);
+        }
     } catch (error) {
         console.error(error);
         throw error;

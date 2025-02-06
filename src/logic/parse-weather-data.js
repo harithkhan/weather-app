@@ -29,7 +29,7 @@ export async function parseCurrentWeather(location) {
         return currentWeather;
     } catch (error) {
         console.error(error);
-        throw error;
+        return null;
     }
 }
 
@@ -55,7 +55,7 @@ export async function parseDayWeather(location) {
         return parsedDayWeather;
     } catch (error) {
         console.error(error);
-        throw error;
+        return null;
     }
 }
 
@@ -76,6 +76,6 @@ export async function parseWeekWeather(location) {
         return parsedWeekWeather;
     } catch (error) {
         console.error(error);
-        throw error;
+        return null;;
     }
 }
