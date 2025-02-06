@@ -2,11 +2,12 @@ import "./style.css";
 import { getWeatherData } from "./weather-api";
 
 getWeatherData("London")
-    .then((resolve) => {
-        console.log(resolve)
+    .then((weatherData) => {
+        console.log(weatherData)
     })
 
-getWeatherData("Kuala Lumpur")
-    .then((resolve) => {
-        console.log(resolve)
+getWeatherData("Mom's House")
+    .then((weatherData) => {
+        console.log(weatherData);
     })
+    .catch((error) => console.error(error))

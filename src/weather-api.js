@@ -6,11 +6,9 @@ function getApiUrl(location) {
 
 export async function getWeatherData(location) {
     const response = await fetch(getApiUrl(location));
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     const weatherData = await response.json();
     return weatherData;
 }
-
-// getWeatherData("London")
-//     .then((resolve) => {
-//         console.log(resolve)
-//     })
