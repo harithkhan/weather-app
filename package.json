@@ -22,5 +22,8 @@
     "lint": "npx eslint",
     "format": "npx prettier . --write",
     "check-format": "npx prettier . --check"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0"
   }
 }
