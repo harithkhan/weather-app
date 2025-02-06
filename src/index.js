@@ -4,12 +4,18 @@ import { getWeatherData } from "./weather-api";
 
 getWeatherData("Kuala Lumpur")
     .then((weatherData) => {
+        if (!weatherData) {
+            console.log("Weather data unavailable");
+        };
         console.log(weatherData);
     })
     .catch((error) => { console.error(error) });
 
 parseCurrentWeather("Kuala Lumpur")
     .then((currentWeather) => {
+        if (!currentWeather) {
+            console.log("Weather data unavailable");
+        };
         console.log(currentWeather);
         return currentWeather
     })
@@ -17,6 +23,9 @@ parseCurrentWeather("Kuala Lumpur")
 
 parseDayWeather("Kuala Lumpur")
     .then((dayWeather) => {
+        if (!dayWeather) {
+            console.log("Weather data unavailable");
+        };
         console.log(dayWeather);
         return dayWeather;
     })
@@ -24,6 +33,9 @@ parseDayWeather("Kuala Lumpur")
 
 parseWeekWeather("Kuala Lumpur")
     .then((weekWeather) => {
+        if (!weekWeather) {
+            console.log("Weather data unavailable");
+        };
         console.log(weekWeather);
         return weekWeather;
     })

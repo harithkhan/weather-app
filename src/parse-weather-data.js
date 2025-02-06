@@ -2,6 +2,10 @@ import { getWeatherData } from "./weather-api";
 
 export async function parseCurrentWeather(location) {
     const weatherData = await getWeatherData(location);
+    if (!weatherData) {
+        return console.error(`Failed to retrieve weather data for ${location}`);
+    }   
+    
     const currentWeather = {
         location: weatherData.resolvedAddress,
         datetime: weatherData.currentConditions.datetime,
@@ -20,6 +24,9 @@ export async function parseCurrentWeather(location) {
 
 export async function parseDayWeather(location) {
     const weatherData = await getWeatherData(location);
+    if (!weatherData || !weatherData.days || !weatherData.days[0] || !weatherData.days[0].hours) {
+        return console.error(`Failed to retrieve weather data for ${location}`);
+    }
     const dayWeatherData = weatherData.days[0].hours; // Returns an array of 24 hours of weather data
     const parsedDayWeather = dayWeatherData.reduce((acc, hourData, index) => {
         acc[index] = {
@@ -35,15 +42,16 @@ export async function parseDayWeather(location) {
 
 export async function parseWeekWeather(location) {
     const weatherData = await getWeatherData(location);
+    if (!weatherData || !weatherData.days) {
+        return console.error(`Failed to retrieve weather data for ${location}`);
+    }
     const weekWeatherData = weatherData.days // Returns an array of 14 days of weather data
-    const parsedWeekWeather = weekWeatherData.reduce((acc, dayData, index) => {
-        if (index <= 6) {
-            acc[index] = {
-                datetime: dayData.datetime,
-                temp: dayData.temp,
-                conditions: dayData.conditions,
-                precipprob: dayData.precipprob
-            }
+    const parsedWeekWeather = weekWeatherData.slice(0, 7).reduce((acc, dayData, index) => {
+        acc[index] = {
+            datetime: dayData.datetime,
+            temp: dayData.temp,
+            conditions: dayData.conditions,
+            precipprob: dayData.precipprob
         };
         return acc;
     }, {});

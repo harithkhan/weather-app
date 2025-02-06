@@ -5,10 +5,15 @@ function getApiUrl(location) {
 }
 
 export async function getWeatherData(location) {
-    const response = await fetch(getApiUrl(location));
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+    try {
+        const response = await fetch(getApiUrl(location));
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const weatherData = await response.json();
+        return weatherData;
+    } catch (error) {
+        console.error(`Error fetching weather data for ${location}:`, error);
+        return null;
     }
-    const weatherData = await response.json();
-    return weatherData;
 }
