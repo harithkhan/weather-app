@@ -18,10 +18,31 @@ export async function parseCurrentWeather(location) {
     return currentWeather;
 }
 
-// export function parseDayWeather(weatherData) {
-//     let todayWeatherData = weatherData.days[0].hours;
-//     return todayWeatherData;
-// }
+export async function parseDayWeather(location) {
+    const weatherData = await getWeatherData(location);
+    const dayWeatherData = weatherData.days[0].hours;
+    const parsedDayWeather = dayWeatherData.reduce((acc, hourData, index) => {
+        acc[index] = {
+            datetime: hourData.datetime,
+            temp: hourData.temp,
+            conditions: hourData.conditions,
+            precipprob: hourData.precipprob
+        };
+        return acc;
+    }, {});
+
+    // let parsedDayWeather = {};
+
+    // for (let i in dayWeatherData) {
+    //     parsedDayWeather[i] = {
+    //         datetime: dayWeatherData[i].datetime,
+    //         temp: dayWeatherData[i].temp,
+    //         conditions: dayWeatherData[i].conditions,
+    //         precipprob: dayWeatherData[i].precipprob
+    //     }
+    // }
+    return parsedDayWeather;
+}
 
 // export function parseWeekWeather() {
 

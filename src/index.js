@@ -1,22 +1,16 @@
 import "./style.css";
-import { parseCurrentWeather } from "./parse-weather-data";
-import { parseDayWeather } from "./parse-weather-data";
-
-// getWeatherData("Kuala Lumpur")
-//     .then((weatherData) => {
-//         console.log(weatherData);
-//     })
-//     .catch((error) => console.error(error))
-
-// getWeatherData("London")
-//     .then((weatherData) => {
-//         console.log(weatherData);
-//     })
-//     .catch((error) => console.error(error))
+import { parseCurrentWeather, parseDayWeather } from "./parse-weather-data";
 
 parseCurrentWeather("Kuala Lumpur")
     .then((currentWeather) => {
         console.log(currentWeather);
         return currentWeather
+    })
+    .catch((error) => { console.error(error) })
+
+parseDayWeather("Kuala Lumpur")
+    .then((dayWeather) => {
+        console.log(dayWeather);
+        return dayWeather;
     })
     .catch((error) => { console.error(error) })
