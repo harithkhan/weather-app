@@ -1,4 +1,4 @@
 import "./style.css";
-import { handleSearch } from "./search-location";
+import { handleSearch } from "./logic/search-location" 
 
 handleSearch("Kuala Lumpur");
