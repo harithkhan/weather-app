@@ -28,15 +28,13 @@ export async function parseDayWeather(location) {
         return console.error(`Failed to retrieve weather data for ${location}`);
     }
     const dayWeatherData = weatherData.days[0].hours; // Returns an array of 24 hours of weather data
-    const parsedDayWeather = dayWeatherData.reduce((acc, hourData, index) => {
-        acc[index] = {
-            datetime: hourData.datetime,
-            temp: hourData.temp,
-            conditions: hourData.conditions,
-            precipprob: hourData.precipprob
-        };
-        return acc;
-    }, {});
+    const parsedDayWeather = dayWeatherData.map((hourData) => ({
+        datetime: hourData.datetime,
+        temp: hourData.temp,
+        conditions: hourData.conditions,
+        precipprob: hourData.precipprob
+     
+    }));
     return parsedDayWeather;
 }
 
@@ -46,14 +44,11 @@ export async function parseWeekWeather(location) {
         return console.error(`Failed to retrieve weather data for ${location}`);
     }
     const weekWeatherData = weatherData.days // Returns an array of 14 days of weather data
-    const parsedWeekWeather = weekWeatherData.slice(0, 7).reduce((acc, dayData, index) => {
-        acc[index] = {
-            datetime: dayData.datetime,
-            temp: dayData.temp,
-            conditions: dayData.conditions,
-            precipprob: dayData.precipprob
-        };
-        return acc;
-    }, {});
+    const parsedWeekWeather = weekWeatherData.slice(0, 7).map((dayData) => ({
+        datetime: dayData.datetime,
+        temp: dayData.temp,
+        conditions: dayData.conditions,
+        precipprob: dayData.precipprob
+    }));
     return parsedWeekWeather;
 }
