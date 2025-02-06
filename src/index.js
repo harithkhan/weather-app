@@ -1,4 +1,4 @@
 import "./style.css";
-import { handleSearch } from "./logic/search-location" 
+import { attachFormEventListeners } from "./display/search-form";
 
-handleSearch("Kuala Lumpur");
+attachFormEventListeners();

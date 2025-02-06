@@ -14,6 +14,6 @@ export async function getWeatherData(location) {
         return weatherData;
     } catch (error) {
         console.error(`Error fetching weather data for ${location}:`, error);
-        return null;
+        throw error;
     }
 }
