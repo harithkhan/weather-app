@@ -1,4 +1,4 @@
-export async function displayCurrentWeather(currentWeather) {
+export function displayCurrentWeather(currentWeather) {
     const currentIconContainer = document.querySelector(".current-icon-container");
     const locationContainer = document.querySelector(".location-container");
     const tempContainer = document.querySelector(".temp-container");
@@ -11,4 +11,37 @@ export async function displayCurrentWeather(currentWeather) {
     const sunriseContainer = document.querySelector(".sunrise-container");
     const sunsetContainer = document.querySelector(".sunset-container");
 
+    const currentIconText = currentWeather.icon;
+    const currentIcon = document.createElement("img");
+    const images = require.context('../img/dynamic-icons', false, /\.(png|jpe?g|svg)$/);
+    function getWeatherIcon(iconName) {
+        return images(`./${iconName}.png`);
+    }
+    currentIcon.src = getWeatherIcon(currentIconText);
+    currentIcon.className = "current-icon";
+    currentIcon.alt = "Icon of current weather";
+
+    const location = currentWeather.address;
+    const temp = currentWeather.temp;
+    const feelsLike = currentWeather.feelsLike;
+    const humidity = currentWeather.humidity;
+    const precip = currentWeather.precipProb;
+    const uvIndex = currentWeather.uvIndex;
+    const conditions = currentWeather.conditions;
+    const description = currentWeather.description;
+    const sunrise = currentWeather.sunrise;
+    const sunset = currentWeather.sunset;
+
+    currentIconContainer.innerHTML = ""; // Clear previous icon, if any
+    currentIconContainer.appendChild(currentIcon);
+    locationContainer.textContent = location;
+    tempContainer.textContent = temp;
+    feelsLikeContainer.textContent = `Feels Like: ${feelsLike}`;
+    humidityContainer.textContent = `Humidity: ${humidity}`;
+    precipContainer.textContent = `Rain: ${precip}%`;
+    uvIndexContainer.textContent = `UV Index: ${uvIndex}`;
+    conditionsContainer.textContent = conditions;
+    descriptionContainer.textContent = description;
+    sunriseContainer.textContent = `Sunrise: ${sunrise}`;
+    sunsetContainer.textContent = `Sunset: ${sunset}`;
 }
