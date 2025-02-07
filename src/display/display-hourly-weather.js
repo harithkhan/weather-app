@@ -13,7 +13,6 @@ export function displayHourlyWeather(hourlyWeather) {
 
         const datetimeDisplay = document.createElement("div");
         datetimeDisplay.className = "hour-datetime-display";
-        console.log(datetime)
         datetimeDisplay.textContent = datetime;
         hourContainer.appendChild(datetimeDisplay);
 
@@ -36,4 +35,14 @@ export function displayHourlyWeather(hourlyWeather) {
         tempDisplay.textContent = temp;
         hourContainer.appendChild(tempDisplay);
     })
+}
+
+function handleRightArrowClick() {
+    const carousel = document.querySelector(".carousel");
+    carousel.style.right = "20rem";
+}
+
+export function attachArrowButtonEventListeners() {
+    const rightArrowButton = document.getElementById("right-button");
+    rightArrowButton.addEventListener("click", handleRightArrowClick);
 }
