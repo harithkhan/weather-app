@@ -8,7 +8,9 @@ import { displayHourlyWeather } from "./display-hourly-weather";
 const searchForm = document.getElementById("search-form");
 
 export async function handleSearchSubmit(event = null) {
-    if (event != null) { event.preventDefault(); }
+    if (event != null) {
+        event.preventDefault();
+    }
     try {
         const formData = new FormData(searchForm);
         const searchLocation = formData.get("search");

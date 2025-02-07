@@ -30,7 +30,7 @@ export function displayCurrentWeather(currentWeather) {
     currentIcon.alt = "Icon of current weather";
 
     const {
-        address: location,
+        resolvedAddress: location,
         temp,
         feelsLike,
         humidity,

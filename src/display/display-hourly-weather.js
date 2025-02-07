@@ -2,13 +2,9 @@ export function displayHourlyWeather(hourlyWeather) {
     const carousel = document.querySelector(".carousel");
     carousel.innerHTML = "";
     hourlyWeather.forEach((hour) => {
-        const {
-            datetime,
-            temp,
-            icon: iconText
-        } = hour;
+        const { datetime, temp, icon: iconText } = hour;
         const hourContainer = document.createElement("div");
-        hourContainer.className = "hour-container"
+        hourContainer.className = "hour-container";
         carousel.appendChild(hourContainer);
 
         const datetimeDisplay = document.createElement("div");
@@ -34,7 +30,7 @@ export function displayHourlyWeather(hourlyWeather) {
         tempDisplay.className = "hour-temp-display";
         tempDisplay.textContent = temp;
         hourContainer.appendChild(tempDisplay);
-    })
+    });
 }
 
 function handleRightArrowClick() {
@@ -44,7 +40,9 @@ function handleRightArrowClick() {
         carousel.style.right = "20rem";
     }
     if (currentRightStyle && currentRightStyle !== "140rem") {
-        const currentRightStyleNumber = parseFloat(currentRightStyle.match(/\d+(\.\d+)?/)[0]);
+        const currentRightStyleNumber = parseFloat(
+            currentRightStyle.match(/\d+(\.\d+)?/)[0]
+        );
         carousel.style.right = `${currentRightStyleNumber + 20}rem`;
     }
 }
@@ -53,10 +51,11 @@ function handleLeftArrowClick() {
     const carousel = document.querySelector(".carousel");
     const currentRightStyle = carousel.style.right;
     if (currentRightStyle && currentRightStyle !== "0rem") {
-        const currentRightStyleNumber = parseFloat(currentRightStyle.match(/\d+(\.\d+)?/)[0]);
+        const currentRightStyleNumber = parseFloat(
+            currentRightStyle.match(/\d+(\.\d+)?/)[0]
+        );
         carousel.style.right = `${currentRightStyleNumber - 20}rem`;
     }
-
 }
 
 export function attachArrowButtonEventListeners() {

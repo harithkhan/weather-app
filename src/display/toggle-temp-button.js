@@ -8,7 +8,7 @@ function toggleDisplayTempFormat() {
         const locationContainer = document.querySelector(".location-container");
         searchInput.value = locationContainer.textContent;
         handleSearchSubmit(null);
-    };
+    }
 }
 
 export function attachToggleEventListener() {
