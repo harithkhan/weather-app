@@ -209,6 +209,7 @@ main {
     overflow: hidden;
     position: relative;
     width: 160rem;
+    right: 0rem;
 }
 
 .hour-container {

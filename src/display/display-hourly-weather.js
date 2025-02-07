@@ -40,7 +40,6 @@ export function displayHourlyWeather(hourlyWeather) {
 function handleRightArrowClick() {
     const carousel = document.querySelector(".carousel");
     const currentRightStyle = carousel.style.right;
-    
     if (!currentRightStyle || currentRightStyle === "0rem") {
         carousel.style.right = "20rem";
     }
@@ -50,7 +49,20 @@ function handleRightArrowClick() {
     }
 }
 
+function handleLeftArrowClick() {
+    const carousel = document.querySelector(".carousel");
+    const currentRightStyle = carousel.style.right;
+    if (currentRightStyle && currentRightStyle !== "0rem") {
+        const currentRightStyleNumber = parseFloat(currentRightStyle.match(/\d+(\.\d+)?/)[0]);
+        carousel.style.right = `${currentRightStyleNumber - 20}rem`;
+    }
+
+}
+
 export function attachArrowButtonEventListeners() {
     const rightArrowButton = document.getElementById("right-button");
     rightArrowButton.addEventListener("click", handleRightArrowClick);
+
+    const leftArrowButton = document.getElementById("left-button");
+    leftArrowButton.addEventListener("click", handleLeftArrowClick);
 }
