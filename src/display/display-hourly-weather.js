@@ -3,13 +3,19 @@ export function displayHourlyWeather(hourlyWeather) {
     carousel.innerHTML = "";
     hourlyWeather.forEach((hour) => {
         const {
-            datettime,
+            datetime,
             temp,
             icon: iconText
         } = hour;
         const hourContainer = document.createElement("div");
         hourContainer.className = "hour-container"
         carousel.appendChild(hourContainer);
+
+        const datetimeDisplay = document.createElement("div");
+        datetimeDisplay.className = "hour-datetime-display";
+        console.log(datetime)
+        datetimeDisplay.textContent = datetime;
+        hourContainer.appendChild(datetimeDisplay);
 
         const hourIcon = document.createElement("img");
         const images = require.context(
@@ -24,5 +30,10 @@ export function displayHourlyWeather(hourlyWeather) {
         hourIcon.className = "hour-icon";
         hourIcon.alt = "Icon of the weather of this hour";
         hourContainer.appendChild(hourIcon);
+
+        const tempDisplay = document.createElement("div");
+        tempDisplay.className = "hour-temp-display";
+        tempDisplay.textContent = temp;
+        hourContainer.appendChild(tempDisplay);
     })
 }
