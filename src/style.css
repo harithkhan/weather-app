@@ -61,6 +61,27 @@ body {
 }
 
 /* App Styling */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-icon {
+    margin-left: -2rem;
+}
+
+header > h1 {
+    font-family: var(--font-header);
+    font-weight: 500;
+    color: white;
+}
+
+main {
+    margin-top: 2rem;
+}
+
 .app-container {
     width: 40rem;
     height: 40rem;
