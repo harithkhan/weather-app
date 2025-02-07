@@ -200,6 +200,24 @@ main {
     width: 20rem;
     height: 10rem;
     border: 1px solid black;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 160rem;
+}
+
+.hour-container {
+    width: 6.66rem;
+}
+
+.hour-icon {
+    width: 6.66rem;
+    height: 6rem;
 }
 
 /* Footer */

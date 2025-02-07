@@ -3,6 +3,7 @@ import {
     getHourlyWeather,
 } from "../logic/parse-weather-data";
 import { displayCurrentWeather } from "./display-current-weather";
+import { displayHourlyWeather } from "./display-hourly-weather";
 
 const searchForm = document.getElementById("search-form");
 
@@ -14,6 +15,7 @@ async function handleSearchSubmit(event) {
         const currentWeather = await getCurrentWeather(searchLocation);
         const hourlyWeather = await getHourlyWeather(searchLocation);
         displayCurrentWeather(currentWeather);
+        displayHourlyWeather(hourlyWeather);
         console.log(currentWeather);
         console.log(hourlyWeather);
         // Clear search input after search
