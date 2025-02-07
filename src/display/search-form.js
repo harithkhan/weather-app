@@ -7,8 +7,8 @@ import { displayHourlyWeather } from "./display-hourly-weather";
 
 const searchForm = document.getElementById("search-form");
 
-async function handleSearchSubmit(event) {
-    event.preventDefault();
+export async function handleSearchSubmit(event = null) {
+    if (event != null) { event.preventDefault(); }
     try {
         const formData = new FormData(searchForm);
         const searchLocation = formData.get("search");
@@ -21,6 +21,7 @@ async function handleSearchSubmit(event) {
         // Clear search input after search
         const searchInput = document.getElementById("search");
         searchInput.value = "";
+        searchInput.dataset.searched = "true";
 
         if (!currentWeather || !hourlyWeather) {
             throw new Error(`Cound not search for null location`);
