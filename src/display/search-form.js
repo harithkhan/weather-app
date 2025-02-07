@@ -14,6 +14,10 @@ async function handleSearchSubmit(event) {
         const hourlyWeather = await getHourlyWeather(searchLocation);
         console.log(currentWeather);
         console.log(hourlyWeather);
+        // Clear search input after search
+        const searchInput = document.getElementById("search");
+        searchInput.value = "";
+        
         if (!currentWeather || !hourlyWeather) {
             throw new Error(`Cound not search for null location`);
         }
