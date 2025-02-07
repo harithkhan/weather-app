@@ -176,6 +176,32 @@ main {
     grid-area: 6 / 3 / -1 / -1;
 }
 
+.hourly-weather {
+    width: 34rem;
+    height: 10rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-button {
+    width: 6rem;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.arrow-icon {
+    background-color: inherit;
+}
+
+.carousel-frame {
+    width: 20rem;
+    height: 10rem;
+    border: 1px solid black;
+}
+
 /* Footer */
 footer {
     display: flex;
