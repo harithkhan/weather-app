@@ -36,7 +36,38 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 /* Reset Over */
+/* General Styling */
+:root {
+    --blue-one: #eff9ff;
+    --blue-two: #e0f2fe;
+    --blue-three: #b8e6ff;
+    --blue-four: #73d4ff;
+    --blue-five: #00bcff;
+    --blue-six: #00a6f5;
+    --blue-seven: #0084d1;
+    --blue-eight: #0069a8;
+    --blue-nine: #00598a;
+    --blue-ten: #004a70;
+    --blue-eleven: #062f4a;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* App Styling */
+.app-container {
+    width: 40rem;
+    height: 40rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 20px;
+    background-color: var(--blue-four);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
 
 /* Footer */
 footer {
