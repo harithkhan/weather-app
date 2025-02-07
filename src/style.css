@@ -107,7 +107,51 @@ main {
     border: 1px solid black;
     display: grid;
     grid-template-rows: repeat(6, 1fr);
-    grid-template-columns: 13rem 1fr 1fr;
+    grid-template-columns: 7.5rem repeat(3, 1fr);
+}
+
+.current-icon-container {
+    grid-area: 1 / 1 / 4 / 2;
+}
+
+.location-container {
+    grid-area: 1 / 2 / 2 / -1;
+}
+
+.temp-container {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.feels-like-container {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+.humidity-container {
+    grid-area: 3 / 2 / 3 / 3;
+}
+
+.precip-container {
+    grid-area: 3 / 3 / 3 / 4;
+}
+
+.uvindex-container {
+    grid-area: 3 / 4 / 4 / -1;
+}
+
+.conditions-container {
+    grid-area: 4 / 1 / 5 / -1;
+}
+
+.description-container {
+    grid-area: 5 / 1 / 6 / -1;
+}
+
+.sunrise-container {
+    grid-area: 6 / 1 / -1 / 3;
+}
+
+.sunset-container {
+    grid-area: 6 / 3 / -1 / -1;
 }
 
 /* Footer */
