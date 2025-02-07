@@ -21,16 +21,18 @@ export function displayCurrentWeather(currentWeather) {
     currentIcon.className = "current-icon";
     currentIcon.alt = "Icon of current weather";
 
-    const location = currentWeather.address;
-    const temp = currentWeather.temp;
-    const feelsLike = currentWeather.feelsLike;
-    const humidity = currentWeather.humidity;
-    const precip = currentWeather.precipProb;
-    const uvIndex = currentWeather.uvIndex;
-    const conditions = currentWeather.conditions;
-    const description = currentWeather.description;
-    const sunrise = currentWeather.sunrise;
-    const sunset = currentWeather.sunset;
+    const {
+        address: location,
+        temp,
+        feelsLike,
+        humidity,
+        precipProb: precip,
+        uvIndex,
+        conditions,
+        description,
+        sunrise,
+        sunset
+    } = currentWeather;
 
     currentIconContainer.innerHTML = ""; // Clear previous icon, if any
     currentIconContainer.appendChild(currentIcon);
