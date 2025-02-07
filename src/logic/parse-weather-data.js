@@ -53,8 +53,14 @@ export async function getHourlyWeather(location) {
         const hourlyWeather = rawHourlyWeatherData.map((hourData) => ({
             datetime: hourData.datetime,
             conditions: hourData.conditions,
-            temp: hourData.temp,
-            feelsLike: hourData.feelslike,
+            temp:
+                getTempFormat() === "fahrenheit"
+                    ? `${hourData.temp}°F`
+                    : `${(((hourData.temp - 32) * 5) / 9).toFixed(2)}°C`,
+            feelsLike:
+                getTempFormat() === "fahrenheit"
+                    ? `${hourData.feelslike}°F`
+                    : `${(((hourData.feelslike - 32) * 5) / 9).toFixed(2)}°C`,
             icon: hourData.icon,
             precipProb: hourData.precipprob,
         }));
