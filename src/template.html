@@ -17,14 +17,24 @@
                 <h1>Weather Search</h1>
             </header>
             <main>
-                <form autocomplete="off" id="search-form">
-                    <input
-                        type="search"
-                        id="search"
-                        placeholder="search location"
-                        name="search"
-                    />
-                </form>
+                <div class="form-section">
+                    <form autocomplete="off" id="search-form">
+                        <input
+                            type="search"
+                            id="search"
+                            placeholder="search location"
+                            name="search"
+                        />
+                    </form>
+                    <div class="toggle-temp-format">
+                        <span id="unitLabel">°F</span>
+                        <label class="switch">
+                            <input type="checkbox" id="unitToggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span id="unitLabel">°C</span>
+                    </div>
+                </div>
                 <div class="current-weather">
                     <div class="current-icon-container"></div>
                     <div class="location-container"></div>
