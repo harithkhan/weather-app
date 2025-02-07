@@ -3,7 +3,8 @@ import {
     getCurrentWeather,
     getHourlyWeather,
 } from "./logic/parse-weather-data";
+import { toggleTempFormat } from "./logic/temp-format";
 
 getCurrentWeather("Kuala Lumpur");
-getHourlyWeather("Kuala Lumpur");
-getHourlyWeather("Mars");
+toggleTempFormat();
+getCurrentWeather("Kuala Lumpur");

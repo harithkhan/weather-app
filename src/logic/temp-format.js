@@ -9,4 +9,3 @@ export function toggleTempFormat() {
         tempFormat = "fahrenheit";
     }
 }
-
