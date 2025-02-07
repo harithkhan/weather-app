@@ -35,7 +35,6 @@ export async function getCurrentWeather(location) {
                       sunrise: rawWeatherData.currentConditions.sunrise,
                       sunset: rawWeatherData.currentConditions.sunset,
                   };
-        console.log(currentWeather);
         return currentWeather;
     } catch (error) {
         console.error(error);
@@ -64,7 +63,6 @@ export async function getHourlyWeather(location) {
             icon: hourData.icon,
             precipProb: hourData.precipprob,
         }));
-        console.log(hourlyWeather);
         return hourlyWeather;
     } catch (error) {
         console.error(error);
