@@ -39,7 +39,15 @@ export function displayHourlyWeather(hourlyWeather) {
 
 function handleRightArrowClick() {
     const carousel = document.querySelector(".carousel");
-    carousel.style.right = "20rem";
+    const currentRightStyle = carousel.style.right;
+    
+    if (!currentRightStyle || currentRightStyle === "0rem") {
+        carousel.style.right = "20rem";
+    }
+    if (currentRightStyle && currentRightStyle !== "140rem") {
+        const currentRightStyleNumber = parseFloat(currentRightStyle.match(/\d+(\.\d+)?/)[0]);
+        carousel.style.right = `${currentRightStyleNumber + 20}rem`;
+    }
 }
 
 export function attachArrowButtonEventListeners() {
