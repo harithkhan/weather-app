@@ -1,0 +1,67 @@
+/* CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+/* Reset Over */
+/* App Styling */
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+  
+  .credit {
+    display: flex;
+    gap: 0.3rem;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: blue;
+    transition: color 0.3s ease; 
+  }
+  
+  footer a:hover {
+    color: darkblue;
+    }
+  
+  .credit img {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
