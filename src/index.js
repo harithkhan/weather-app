@@ -1,4 +1,9 @@
 import "./style.css";
-import { attachFormEventListeners } from "./display/search-form";
+import {
+    getCurrentWeather,
+    getHourlyWeather,
+} from "./logic/parse-weather-data";
 
-attachFormEventListeners();
+getCurrentWeather("Kuala Lumpur");
+getHourlyWeather("Kuala Lumpur");
+getHourlyWeather("Mars");

@@ -12,8 +12,7 @@ export async function getRawWeatherData(location) {
             throw new Error("Bad Request");
         }
         const rawWeatherData = await apiResponse.json();
-        console.log(rawWeatherData)
-        return rawWeatherData
+        return rawWeatherData;
     } catch (error) {
         console.error(`Could not obtain weather data for ${location},`, error);
         return null;
