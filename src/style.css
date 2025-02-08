@@ -125,6 +125,10 @@ main {
     display: flex;
 }
 
+.toggle-temp-format {
+    margin-left: 10px;
+}
+
 .switch {
     position: relative;
     display: inline-block;
@@ -180,7 +184,6 @@ input:checked + .slider:before {
 
 #unitLabel {
     font-size: 18px;
-    margin-left: 10px;
     font-weight: bold;
 }
 
