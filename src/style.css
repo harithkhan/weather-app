@@ -200,9 +200,11 @@ input:checked + .slider:before {
 /* Current Weather */
 .current-weather {
     width: 34rem;
-    height: 13rem;
+    min-height: 13rem;
     display: grid;
     color: white;
+    align-items: center;
+    font-weight: 600;
 }
 
 .grid-on {
@@ -226,10 +228,14 @@ input:checked + .slider:before {
 
 .location-container {
     grid-area: 1 / 2 / 2 / -1;
+    font-weight: 700;
 }
 
 .temp-container {
     grid-area: 2 / 2 / 3 / 3;
+    font-size: 2rem;
+    font-weight: 700;
+
 }
 
 .feels-like-container {
