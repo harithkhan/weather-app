@@ -5,7 +5,7 @@ import {
 import { buildCurrentWeatherDisplay, clearCurrentWeatherDisplay } from "./build-current-weather-display";
 import { buildHourlyWeatherDisplay, clearHourlyWeatherDisplay } from "./build-hourly-weather-display";
 import { displayCurrentWeather } from "./display-current-weather";
-import { displayCurrentWeatherError } from "./display-error";
+import { displayCurrentWeatherError, displayHourlyWeatherError } from "./display-error";
 import { displayHourlyWeather } from "./display-hourly-weather";
 
 const searchForm = document.getElementById("search-form");
@@ -20,7 +20,7 @@ export async function handleSearchSubmit(event = null) {
         const currentWeather = await getCurrentWeather(searchLocation);
         const hourlyWeather = await getHourlyWeather(searchLocation);
         if (!currentWeather || !hourlyWeather) {
-            throw new Error(`Cound not obtain weather data for ${searchLocation}`);
+            throw new Error(`Cound not obtain weather data for "${searchLocation}"`);
         }
         clearCurrentWeatherDisplay();
         buildCurrentWeatherDisplay();
@@ -38,6 +38,7 @@ export async function handleSearchSubmit(event = null) {
         console.error(error);
         clearCurrentWeatherDisplay();
         displayCurrentWeatherError(error);
+        displayHourlyWeatherError("Could not obtain hourly weather");
     }
 }
 
