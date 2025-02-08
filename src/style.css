@@ -306,6 +306,11 @@ input:checked + .slider:before {
 
 .hour-container {
     width: 6.66rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-weight: 600;
 }
 
 .hour-icon {
