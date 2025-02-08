@@ -212,6 +212,14 @@ input:checked + .slider:before {
     font-weight: 600;
 }
 
+#loading-container {
+    justify-self: center;
+}
+
+.giphy-embed {
+    border-radius: 25px;
+}
+
 .current-weather-error {
     justify-self: center;
 }

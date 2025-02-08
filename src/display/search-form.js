@@ -16,6 +16,7 @@ import {
     displayHourlyWeatherError,
 } from "./display-error";
 import { displayHourlyWeather } from "./display-hourly-weather";
+import { displayLoadingGif, hideLoadingGif } from "./loading-gif";
 
 const searchForm = document.getElementById("search-form");
 
@@ -26,13 +27,15 @@ export async function handleSearchSubmit(event = null) {
     try {
         const formData = new FormData(searchForm);
         const searchLocation = formData.get("search");
+        displayLoadingGif();
         const currentWeather = await getCurrentWeather(searchLocation);
         const hourlyWeather = await getHourlyWeather(searchLocation);
+        hideLoadingGif();
         if (!currentWeather || !hourlyWeather) {
             throw new Error(
                 `Cound not obtain weather data for "${searchLocation}"`
             );
-        }
+        };
         clearCurrentWeatherDisplay();
         buildCurrentWeatherDisplay();
         clearHourlyWeatherDisplay();
