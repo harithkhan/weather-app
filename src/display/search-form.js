@@ -36,6 +36,9 @@ export async function handleSearchSubmit(event = null) {
         searchInput.dataset.searched = "true";  
     } catch (error) {
         console.error(error);
+        const searchInput = document.getElementById("search");
+        searchInput.value = "";
+        searchInput.dataset.searched = "false";  
         clearCurrentWeatherDisplay();
         displayCurrentWeatherError(error);
         clearHourlyWeatherDisplay();
