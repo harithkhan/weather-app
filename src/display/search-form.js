@@ -3,6 +3,7 @@ import {
     getHourlyWeather,
 } from "../logic/parse-weather-data";
 import { buildCurrentWeatherDisplay, clearCurrentWeatherDisplay } from "./build-current-weather-display";
+import { buildHourlyWeatherDisplay } from "./build-hourly-weather-display";
 import { displayCurrentWeather } from "./display-current-weather";
 import { displayCurrentWeatherError } from "./display-error";
 import { displayHourlyWeather } from "./display-hourly-weather";
@@ -23,6 +24,7 @@ export async function handleSearchSubmit(event = null) {
         }
         clearCurrentWeatherDisplay();
         buildCurrentWeatherDisplay();
+        buildHourlyWeatherDisplay();
         displayCurrentWeather(currentWeather);
         displayHourlyWeather(hourlyWeather);
         console.log(currentWeather);
