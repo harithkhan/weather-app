@@ -202,6 +202,7 @@ input:checked + .slider:before {
     width: 34rem;
     height: 13rem;
     display: grid;
+    color: white;
 }
 
 .grid-on {
