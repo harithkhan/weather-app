@@ -54,7 +54,7 @@ export async function getHourlyWeather(location) {
         }
         const rawHourlyWeatherData = rawWeatherData.days[0].hours;
         const hourlyWeather = rawHourlyWeatherData.map((hourData) => ({
-            datetime: hourData.datetime,
+            datetime: formatTime(hourData.datetime),
             conditions: hourData.conditions,
             temp:
                 getTempFormat() === "fahrenheit"
