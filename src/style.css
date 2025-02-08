@@ -86,7 +86,7 @@ body {
 /* App Styling */
 .app-container {
     width: 40rem;
-    min-height: 10rem;
+    min-height: 14rem;
     margin-top: 3rem;
     margin-bottom: 2rem;
     padding: 2rem;
@@ -239,7 +239,6 @@ input:checked + .slider:before {
     grid-area: 2 / 2 / 3 / 3;
     font-size: 2rem;
     font-weight: 700;
-
 }
 
 .feels-like-container {
@@ -283,6 +282,10 @@ input:checked + .slider:before {
     align-items: center;
     color: white;
     font-weight: 500;
+}
+
+.hidden {
+    display: none;
 }
 
 #left-button {

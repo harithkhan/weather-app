@@ -4,6 +4,7 @@ import { attachArrowButtonEventListeners } from "./display-hourly-weather";
 
 export function buildHourlyWeatherDisplay() {
     const hourlyWeatherDisplay = document.querySelector(".hourly-weather");
+    hourlyWeatherDisplay.className = "hourly-weather"; // Remove hidden class
 
     const leftButton = document.createElement("button");
     leftButton.type = "button";
@@ -41,4 +42,5 @@ export function buildHourlyWeatherDisplay() {
 export function clearHourlyWeatherDisplay() {
     const hourlyWeatherDisplay = document.querySelector(".hourly-weather");
     hourlyWeatherDisplay.innerHTML = "";
+    hourlyWeatherDisplay.className = "hourly-weather"; // Remove hidden class
 }
