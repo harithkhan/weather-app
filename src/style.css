@@ -260,6 +260,7 @@ input:checked + .slider:before {
 
 .description-container {
     grid-area: 5 / 1 / 6 / -1;
+    line-height: 1.2;
 }
 
 .sunrise-container {
@@ -276,6 +277,8 @@ input:checked + .slider:before {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-weight: 500;
 }
 
 #left-button {
