@@ -102,14 +102,22 @@ header {
     gap: 1rem;
 }
 
+.header-link {
+    text-decoration: none;
+    color: white;
+    font-family: var(--font-header);
+}
+
 .header-icon {
     margin-left: -2rem;
 }
 
-header > h1 {
+a > h1 {
+    all: unset;
     font-family: var(--font-header);
     font-weight: 500;
     color: white;
+    font-size: 2rem;
 }
 
 main {
