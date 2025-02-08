@@ -193,6 +193,10 @@ input:checked + .slider:before {
     height: 13rem;
     border: 1px solid black;
     display: grid;
+    
+}
+
+.grid-on {
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: 7.5rem repeat(3, 1fr);
 }

@@ -1,5 +1,6 @@
 export function buildCurrentWeatherDisplay() {
     const currentWeatherContainer = document.querySelector(".current-weather");
+    currentWeatherContainer.className = "current-weather grid-on";
 
     const currentIconContaier = document.createElement("div");
     currentIconContaier.className = "current-icon-container";
@@ -49,4 +50,5 @@ export function buildCurrentWeatherDisplay() {
 export function clearCurrentWeatherDisplay() {
     const currentWeatherContainer = document.querySelector(".current-weather");
     currentWeatherContainer.innerHTML = "";
+    currentWeatherContainer.className = "current-weather" // Removes grid-on class
 }
