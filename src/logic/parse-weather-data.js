@@ -35,8 +35,8 @@ export async function getCurrentWeather(location) {
                       resolvedAddress: rawWeatherData.resolvedAddress,
                       description: rawWeatherData.description,
                       conditions: rawWeatherData.currentConditions.conditions,
-                      temp: `${(((rawWeatherData.currentConditions.temp - 32) * 5) / 9).toFixed(2)}°C`,
-                      feelsLike: `${(((rawWeatherData.currentConditions.feelslike - 32) * 5) / 9).toFixed(2)}°C`,
+                      temp: `${(((rawWeatherData.currentConditions.temp - 32) * 5) / 9).toFixed(1)}°C`,
+                      feelsLike: `${(((rawWeatherData.currentConditions.feelslike - 32) * 5) / 9).toFixed(1)}°C`,
                       humidity: rawWeatherData.currentConditions.humidity,
                       uvIndex: rawWeatherData.currentConditions.uvindex,
                       icon: rawWeatherData.currentConditions.icon,
@@ -68,11 +68,11 @@ export async function getHourlyWeather(location) {
             temp:
                 getTempFormat() === "fahrenheit"
                     ? `${hourData.temp}°F`
-                    : `${(((hourData.temp - 32) * 5) / 9).toFixed(2)}°C`,
+                    : `${(((hourData.temp - 32) * 5) / 9).toFixed(1)}°C`,
             feelsLike:
                 getTempFormat() === "fahrenheit"
                     ? `${hourData.feelslike}°F`
-                    : `${(((hourData.feelslike - 32) * 5) / 9).toFixed(2)}°C`,
+                    : `${(((hourData.feelslike - 32) * 5) / 9).toFixed(1)}°C`,
             icon: hourData.icon,
             precipProb: hourData.precipprob,
         }));
