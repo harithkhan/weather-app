@@ -35,7 +35,7 @@ export async function handleSearchSubmit(event = null) {
             throw new Error(
                 `Cound not obtain weather data for "${searchLocation}"`
             );
-        };
+        }
         clearCurrentWeatherDisplay();
         buildCurrentWeatherDisplay();
         clearHourlyWeatherDisplay();

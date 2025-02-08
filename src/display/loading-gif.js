@@ -1,6 +1,6 @@
 export function displayLoadingGif() {
     const loadingContainer = document.getElementById("loading-container");
-    loadingContainer.classList.remove("hidden"); 
+    loadingContainer.classList.remove("hidden");
 }
 
 export function hideLoadingGif() {
