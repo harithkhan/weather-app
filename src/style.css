@@ -86,7 +86,7 @@ body {
 /* App Styling */
 .app-container {
     width: 40rem;
-    height: 40rem;
+    min-height: 10rem;
     margin-top: 3rem;
     margin-bottom: 2rem;
     padding: 2rem;
@@ -200,11 +200,15 @@ input:checked + .slider:before {
 /* Current Weather */
 .current-weather {
     width: 34rem;
-    min-height: 13rem;
+    min-height: 2rem;
     display: grid;
     color: white;
     align-items: center;
     font-weight: 600;
+}
+
+.current-weather-error {
+    justify-self: center;
 }
 
 .grid-on {
@@ -273,7 +277,7 @@ input:checked + .slider:before {
 
 .hourly-weather {
     min-width: 34rem;
-    height: 10rem;
+    min-height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
