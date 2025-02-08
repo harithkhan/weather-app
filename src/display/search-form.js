@@ -48,8 +48,6 @@ export async function handleSearchSubmit(event = null) {
         buildHourlyWeatherDisplay();
         displayCurrentWeather(currentWeather);
         displayHourlyWeather(hourlyWeather);
-        console.log(currentWeather);
-        console.log(hourlyWeather);
         // Clear search input after search
         searchInput.value = "";
         searchInput.dataset.searched = "true";
