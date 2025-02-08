@@ -1,4 +1,4 @@
-Weather app - part of The Odin Project curriculum
+Weather App - part of The Odin Project curriculum
 Deployment: https://harithkhan.github.io/weather-app/ 
 
 Demonstrates understanding and application of:
