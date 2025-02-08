@@ -211,6 +211,7 @@ input:checked + .slider:before {
 
 .current-icon-container {
     grid-area: 1 / 1 / 4 / 2;
+    justify-self: center;
 }
 
 .location-container {
