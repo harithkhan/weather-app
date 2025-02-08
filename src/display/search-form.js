@@ -38,6 +38,7 @@ export async function handleSearchSubmit(event = null) {
         console.error(error);
         clearCurrentWeatherDisplay();
         displayCurrentWeatherError(error);
+        clearHourlyWeatherDisplay();
         displayHourlyWeatherError("Could not obtain hourly weather");
     }
 }
