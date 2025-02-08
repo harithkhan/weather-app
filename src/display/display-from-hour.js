@@ -15,6 +15,6 @@ export async function displayFromHour() {
     if (currentHour > 8 && currentHour < 12) { carousel.style.right = "60rem" };
     if (currentHour > 11 && currentHour < 15) { carousel.style.right = "80rem" };
     if (currentHour > 14 && currentHour < 18) { carousel.style.right = "100rem" };
-    if (currentHour > 17 && currentHour < 21) { carousel.style.right = "140rem" };
-    if (currentHour > 20 && currentHour <= 23) { carousel.style.right = "160rem" };
+    if (currentHour > 17 && currentHour < 21) { carousel.style.right = "120rem" };
+    if (currentHour > 20 && currentHour <= 23) { carousel.style.right = "140rem" };
 }
