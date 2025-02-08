@@ -125,6 +125,16 @@ main {
     display: flex;
 }
 
+#search {
+    padding-left: 1rem;
+    border-radius: 16px;
+    border: none;
+}
+
+#search:focus {
+    outline: none;
+}
+
 .toggle-temp-format {
     margin-left: 10px;
 }
