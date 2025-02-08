@@ -19,14 +19,20 @@ import { displayHourlyWeather } from "./display-hourly-weather";
 import { displayLoadingGif, hideLoadingGif } from "./loading-gif";
 
 const searchForm = document.getElementById("search-form");
+const searchInput = document.getElementById("search");
 
 export async function handleSearchSubmit(event = null) {
     if (event != null) {
         event.preventDefault();
     }
+    const formData = new FormData(searchForm);
+    const searchLocation = formData.get("search");
+    if (!searchLocation.trim()) {
+        searchInput.setCustomValidity("Please enter a location.");
+        searchInput.reportValidity();
+        return; 
+    } 
     try {
-        const formData = new FormData(searchForm);
-        const searchLocation = formData.get("search");
         displayLoadingGif();
         const currentWeather = await getCurrentWeather(searchLocation);
         const hourlyWeather = await getHourlyWeather(searchLocation);
@@ -45,12 +51,10 @@ export async function handleSearchSubmit(event = null) {
         console.log(currentWeather);
         console.log(hourlyWeather);
         // Clear search input after search
-        const searchInput = document.getElementById("search");
         searchInput.value = "";
         searchInput.dataset.searched = "true";
     } catch (error) {
         console.error(error);
-        const searchInput = document.getElementById("search");
         searchInput.value = "";
         searchInput.dataset.searched = "false";
         clearCurrentWeatherDisplay();
@@ -60,6 +64,12 @@ export async function handleSearchSubmit(event = null) {
     }
 }
 
+function handleSearchInput() {
+    if (searchInput) { searchInput.setCustomValidity(""); }
+}
+
 export function attachFormSubmitEventListener() {
+    if (!searchForm || !searchInput) return;
     searchForm.addEventListener("submit", handleSearchSubmit);
+    searchInput.addEventListener("input", handleSearchInput);
 }
