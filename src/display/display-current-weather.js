@@ -1,3 +1,5 @@
+import { formatTime } from "../logic/format-time";
+
 export function displayCurrentWeather(currentWeather) {
     const currentIconContainer = document.querySelector(
         ".current-icon-container"
@@ -30,6 +32,7 @@ export function displayCurrentWeather(currentWeather) {
     currentIcon.alt = "Icon of current weather";
 
     const {
+        dateTime,
         resolvedAddress: location,
         temp,
         feelsLike,
@@ -50,7 +53,7 @@ export function displayCurrentWeather(currentWeather) {
     humidityContainer.textContent = `Humidity: ${humidity}`;
     precipContainer.textContent = `Rain: ${precip}%`;
     uvIndexContainer.textContent = `UV Index: ${uvIndex}`;
-    conditionsContainer.textContent = conditions;
+    conditionsContainer.textContent = `${conditions} (as of ${formatTime(dateTime)})`;
     descriptionContainer.textContent = description;
     sunriseContainer.textContent = `Sunrise: ${sunrise}`;
     sunsetContainer.textContent = `Sunset: ${sunset}`;
