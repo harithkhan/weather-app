@@ -354,6 +354,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding-bottom: 2rem;
+    font-weight: 500;
 }
 
 .credit {
@@ -363,12 +364,12 @@ footer {
 
 footer a {
     text-decoration: none;
-    color: blue;
+    color: var(--blue-ten);
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: darkblue;
+    color: var(--blue-five);
 }
 
 .credit img {
