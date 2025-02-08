@@ -80,6 +80,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: var(--font-general);
 }
 
 /* App Styling */
@@ -122,10 +123,6 @@ main {
 /* Form Section */
 .form-section {
     display: flex;
-}
-
-#search-form {
-    font-family: var(--font-general);
 }
 
 .switch {
