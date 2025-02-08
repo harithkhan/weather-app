@@ -1,5 +1,6 @@
 import { getRawWeatherData } from "./weather-api";
 import { getTempFormat } from "./temp-format";
+import { formatTime } from "./format-time";
 
 export async function getCurrentWeather(location) {
     try {
@@ -21,8 +22,8 @@ export async function getCurrentWeather(location) {
                       uvIndex: rawWeatherData.currentConditions.uvindex,
                       icon: rawWeatherData.currentConditions.icon,
                       precipProb: rawWeatherData.currentConditions.precipprob,
-                      sunrise: rawWeatherData.currentConditions.sunrise,
-                      sunset: rawWeatherData.currentConditions.sunset,
+                      sunrise: formatTime(rawWeatherData.currentConditions.sunrise),
+                      sunset: formatTime(rawWeatherData.currentConditions.sunset),
                   }
                 : {
                       searched: rawWeatherData.address,
@@ -35,8 +36,8 @@ export async function getCurrentWeather(location) {
                       uvIndex: rawWeatherData.currentConditions.uvindex,
                       icon: rawWeatherData.currentConditions.icon,
                       precipProb: rawWeatherData.currentConditions.precipprob,
-                      sunrise: rawWeatherData.currentConditions.sunrise,
-                      sunset: rawWeatherData.currentConditions.sunset,
+                      sunrise: formatTime(rawWeatherData.currentConditions.sunrise),
+                      sunset: formatTime(rawWeatherData.currentConditions.sunset),
                   };
         return currentWeather;
     } catch (error) {
