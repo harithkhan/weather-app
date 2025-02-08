@@ -53,7 +53,7 @@ export async function handleSearchSubmit(event = null) {
         clearCurrentWeatherDisplay();
         displayCurrentWeatherError(error);
         clearHourlyWeatherDisplay();
-        displayHourlyWeatherError("Could not obtain hourly weather");
+        displayHourlyWeatherError("Could not obtain hourly weather data");
     }
 }
 
