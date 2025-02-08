@@ -2,8 +2,9 @@ import {
     getCurrentWeather,
     getHourlyWeather,
 } from "../logic/parse-weather-data";
-import { buildCurrentWeatherDisplay } from "./build-current-weather-display";
+import { buildCurrentWeatherDisplay, clearCurrentWeatherDisplay } from "./build-current-weather-display";
 import { displayCurrentWeather } from "./display-current-weather";
+import { displayCurrentWeatherError } from "./display-error";
 import { displayHourlyWeather } from "./display-hourly-weather";
 
 const searchForm = document.getElementById("search-form");
@@ -18,8 +19,9 @@ export async function handleSearchSubmit(event = null) {
         const currentWeather = await getCurrentWeather(searchLocation);
         const hourlyWeather = await getHourlyWeather(searchLocation);
         if (!currentWeather || !hourlyWeather) {
-            throw new Error(`Cound not search for null location`);
+            throw new Error(`Cound not obtain weather data for ${searchLocation}`);
         }
+        clearCurrentWeatherDisplay();
         buildCurrentWeatherDisplay();
         displayCurrentWeather(currentWeather);
         displayHourlyWeather(hourlyWeather);
@@ -31,8 +33,8 @@ export async function handleSearchSubmit(event = null) {
         searchInput.dataset.searched = "true";  
     } catch (error) {
         console.error(error);
-        // const currentWeatherContainer = document.querySelector(".current-weather");
-        // if ()
+        clearCurrentWeatherDisplay();
+        displayCurrentWeatherError(error);
     }
 }
 

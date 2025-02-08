@@ -45,3 +45,8 @@ export function buildCurrentWeatherDisplay() {
     sunsetContainer.className = "sunset-container";
     currentWeatherContainer.appendChild(sunsetContainer);
 }
+
+export function clearCurrentWeatherDisplay() {
+    const currentWeatherContainer = document.querySelector(".current-weather");
+    currentWeatherContainer.innerHTML = "";
+}
