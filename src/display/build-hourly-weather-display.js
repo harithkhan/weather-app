@@ -4,7 +4,6 @@ import { attachArrowButtonEventListeners } from "./display-hourly-weather";
 
 export function buildHourlyWeatherDisplay() {
     const hourlyWeatherDisplay = document.querySelector(".hourly-weather");
-    hourlyWeatherDisplay.innerHTML = "";
 
     const leftButton = document.createElement("button");
     leftButton.type = "button";
@@ -37,4 +36,9 @@ export function buildHourlyWeatherDisplay() {
     rightButton.appendChild(rightIcon);
 
     attachArrowButtonEventListeners();
+}
+
+export function clearHourlyWeatherDisplay() {
+    const hourlyWeatherDisplay = document.querySelector(".hourly-weather");
+    hourlyWeatherDisplay.innerHTML = "";
 }
