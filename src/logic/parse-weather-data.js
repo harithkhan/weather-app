@@ -8,10 +8,10 @@ export async function getCurrentWeather(location) {
         if (!rawWeatherData) {
             throw new Error(`Could not obtain current weather for ${location}`);
         }
-        console.log(rawWeatherData);
         const currentWeather =
             getTempFormat() === "fahrenheit"
                 ? {
+                      dateTime: rawWeatherData.currentConditions.datetime,
                       searched: rawWeatherData.address,
                       resolvedAddress: rawWeatherData.resolvedAddress,
                       description: rawWeatherData.description,
@@ -30,6 +30,7 @@ export async function getCurrentWeather(location) {
                       ),
                   }
                 : {
+                      dateTime: rawWeatherData.currentConditions.datetime,
                       searched: rawWeatherData.address,
                       resolvedAddress: rawWeatherData.resolvedAddress,
                       description: rawWeatherData.description,

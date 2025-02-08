@@ -1,6 +1,10 @@
+import { displayFromHour } from "./display-from-hour";
+
 export function displayHourlyWeather(hourlyWeather) {
     const carousel = document.querySelector(".carousel");
     carousel.innerHTML = "";
+    displayFromHour();
+    
     hourlyWeather.forEach((hour) => {
         const { datetime, temp, icon: iconText } = hour;
         const hourContainer = document.createElement("div");
