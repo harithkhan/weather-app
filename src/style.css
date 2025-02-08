@@ -271,11 +271,26 @@ input:checked + .slider:before {
 }
 
 .hourly-weather {
-    width: 34rem;
+    min-width: 34rem;
     height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#left-button {
+    margin-right: 1.5rem;
+    transition: scale 0.3s ease;
+}
+
+#right-button {
+    margin-left: 1.5rem;
+    transition: scale 0.3s ease;
+}
+
+#left-button:hover,
+#right-button:hover {
+    scale: 1.2;
 }
 
 .carousel-button {
