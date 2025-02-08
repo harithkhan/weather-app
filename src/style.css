@@ -123,12 +123,17 @@ main {
 /* Form Section */
 .form-section {
     display: flex;
+    align-items: center;
 }
 
 #search {
     padding-left: 1rem;
+    padding-right: 1rem;
     border-radius: 16px;
     border: none;
+    height: 2rem;
+    width: 16rem;
+    font-weight: 600;
 }
 
 #search:focus {
