@@ -50,5 +50,5 @@ export function buildCurrentWeatherDisplay() {
 export function clearCurrentWeatherDisplay() {
     const currentWeatherContainer = document.querySelector(".current-weather");
     currentWeatherContainer.innerHTML = "";
-    currentWeatherContainer.className = "current-weather" // Removes grid-on class
+    currentWeatherContainer.className = "current-weather"; // Removes grid-on class
 }

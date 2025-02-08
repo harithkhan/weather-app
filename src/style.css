@@ -193,7 +193,6 @@ input:checked + .slider:before {
     height: 13rem;
     border: 1px solid black;
     display: grid;
-    
 }
 
 .grid-on {
